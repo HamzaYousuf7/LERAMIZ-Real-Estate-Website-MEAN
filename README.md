@@ -1,4 +1,8 @@
-# LeramizApp
+## Note 
+I do not own this template nor did i create it. This temlate was made by https://colorlib.com/
+I'm just using there template for learning perpose 
+
+## LeramizApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
 

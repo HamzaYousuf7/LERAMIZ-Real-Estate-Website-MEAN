@@ -31,7 +31,7 @@
     <div class="row">
       <div class="col-12">
         <div class="site-navbar">
-          <a href="#" class="site-logo"
+          <a routerLink="/" class="site-logo"
             ><img src="../../assets/img/logo.png" alt=""
           /></a>
           <div class="nav-switch">
@@ -53,9 +53,9 @@
 <!-- SHOWING THIS CONDTIONALLY if its on the home page START-->
 <!-- Hero section -->
 <section
-  class="hero-section set-bg"
-  [style.background]="'url(../../assets/img/bg.jpg)'"
-  *ngIf="!isOnHome"
+  class="hero-section set-bg homeNavBarBackgroundImg"
+
+  *ngIf="isOnHome"
 >
   <div class="container hero-text text-white">
     <h2>find your place with our local life style</h2>
@@ -70,9 +70,9 @@
 <!-- Hero section end -->
 
 <!-- Filter form section -->
-<div class="filter-search" *ngIf="!isOnHome">
+<div class="filter-search" *ngIf="isOnHome">
   <div class="container">
-    <form class="filter-form">
+    <form  class="filter-form">
       <input
         type="text"
         placeholder="Enter a street name, address number or keyword"
@@ -92,20 +92,19 @@
 
 <!-- Page top section -->
 <section
-  class="page-top-section set-bg"
-  [style.background]="'url(../../assets/img/page-top-bg.jpg)'"
-  *ngIf="isOnHome"
+  class="page-top-section set-bg otherNavBarBackgroundImg"
+  *ngIf="!isOnHome"
 >
   <div class="container text-white">
-    <h2>Featured Listings</h2>
+    <h2>{{showHeadingAccoringToURL}}</h2>
   </div>
 </section>
 <!--  Page top end -->
 
 <!-- Breadcrumb -->
-<div class="site-breadcrumb" *ngIf="isOnHome">
+<div class="site-breadcrumb" *ngIf="!isOnHome">
   <div class="container">
     <a href=""><i class="fa fa-home"></i>Home</a>
-    <span><i class="fa fa-angle-right"></i>Featured Listings</span>
+    <span><i class="fa fa-angle-right"></i>{{showHeadingAccoringToURL}}</span>
   </div>
 </div>
